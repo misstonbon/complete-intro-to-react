@@ -9,12 +9,24 @@
     <script src="node_modules/react/dist/react.js"></script>
     <script src="node_modules/react-dom/dist/react-dom.js"></script>
     <script>
-
+    const MyTitle = () => {
+      return (
+        React.createElement('div', null,
+        React.createElement('h1',null, "My second component")
+      )
+    )
+  }
+// creating the first component , kind of like a class.
       const MyFirstComponent = () => {
         return React.createElement('div', null,
-              React.createElement('h1', null, "This is my first component!")
+              React.createElement(MyTitle),
+              React.createElement(MyTitle),
+              React.createElement(MyTitle),
+              React.createElement(MyTitle),
+              React.createElement(MyTitle)
             )
       }
+      // react createElement is a particular element of MyFirstComponent function that is a class.
       ReactDOM.render(
         React.createElement(MyFirstComponent),
         document.getElementById('app')
